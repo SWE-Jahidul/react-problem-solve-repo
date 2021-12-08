@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useEffect, useState } from "react";
 import LayoutComponetn from "./Component/LayoutComponet/LayoutComponetn";
+import From from "./Component/From/From";
 
 function App() {
   // const [posts, setPosts] = useState([]);
@@ -27,7 +28,8 @@ function App() {
     // </div>
 
     <div >
-      <LayoutComponetn></LayoutComponetn>
+      {/* <LayoutComponetn></LayoutComponetn> */}
+      <From></From>
     </div>
   );
 }
