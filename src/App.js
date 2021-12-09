@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useEffect, useState } from "react";
 import LayoutComponetn from "./Component/LayoutComponet/LayoutComponetn";
 import From from "./Component/From/From";
+import Card from "./Component/Card/Card";
 
 function App() {
   // const [posts, setPosts] = useState([]);
@@ -29,7 +30,9 @@ function App() {
 
     <div >
       {/* <LayoutComponetn></LayoutComponetn> */}
-      <From></From>
+      {/* <From></From> */}
+     
+      {/* <Card></Card> */}
     </div>
   );
 }
