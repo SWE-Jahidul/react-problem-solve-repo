@@ -37,31 +37,11 @@ export const Container = styled.div`
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     transform: translateY(-100px);
-  }
-
-  a {
-    text-decoration: none;
-    color: #414141;
-  }
-`;
-
-export const Card1 = styled.div`
-  position: relative;
-  border-radius: 10px;
-
-  & .card.face.face1.content {
-    opacity: 1;
-    transition: 0.5s;
-  }
-
+  
   &:hover .face.face1.content {
     opacity: 1;
   }
 
-  & .card.face.face1.content i {
-    max-width: 100px;
-  }
-`;
 
 export const Icon = styled.div`
   position: absolute;
