@@ -41,7 +41,7 @@ export const Container = styled.div`
   &:hover .face.face1.content {
     opacity: 1;
   }
-
+/* sasfgsgfs */
 
 export const Icon = styled.div`
   position: absolute;
