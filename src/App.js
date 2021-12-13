@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import LayoutComponetn from "./Component/LayoutComponet/LayoutComponetn";
 import From from "./Component/From/From";
 import Card from "./Component/Card/Card";
+import ExcelDataShowing from "./Component/ExcleDataShowing/ExcelDataShowing";
 
 function App() {
   // const [posts, setPosts] = useState([]);
@@ -33,6 +34,8 @@ function App() {
       {/* <From></From> */}
      
       {/* <Card></Card> */}
+
+      <ExcelDataShowing></ExcelDataShowing>
     </div>
   );
 }
