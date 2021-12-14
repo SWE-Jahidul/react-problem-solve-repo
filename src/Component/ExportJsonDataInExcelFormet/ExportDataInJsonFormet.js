@@ -4,20 +4,20 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 const ExportDataInJsonFormet = () => {
   const [userdata, setUserData] = useState([]);
-  console.log("data", userdata);
+  // console.log("data", userdata);
 
   const getdata = () => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((data) => {
         setUserData(data);
-        //    console.log(data);
+           console.log(data);
       });
   };
 
   useEffect(() => {
     getdata();
-  });  
+  },[]);  
 
   return (
     <div className="container mt-5">
