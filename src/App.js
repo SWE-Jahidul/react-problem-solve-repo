@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useEffect, useState } from "react";
+import { TASKS } from "./Component/DragAndDrop/Constants";
+import TaskList from "./Component/DragAndDrop/TaskList";
 // import LayoutComponetn from "./Component/LayoutComponet/LayoutComponetn";
 // import From from "./Component/From/From";
 // import Card from "./Component/Card/Card";
@@ -43,7 +45,9 @@ function App() {
 
       {/* <Map></Map> */}
 
-      <ExportDataInJsonFormet></ExportDataInJsonFormet>
+      {/* <ExportDataInJsonFormet></ExportDataInJsonFormet> */}
+
+      <TaskList tasks={TASKS} ></TaskList>
     </div>
   );
 }
