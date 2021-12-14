@@ -1,11 +1,13 @@
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useEffect, useState } from "react";
-import LayoutComponetn from "./Component/LayoutComponet/LayoutComponetn";
-import From from "./Component/From/From";
-import Card from "./Component/Card/Card";
-import ExcelDataShowing from "./Component/ExcleDataShowing/ExcelDataShowing";
+// import LayoutComponetn from "./Component/LayoutComponet/LayoutComponetn";
+// import From from "./Component/From/From";
+// import Card from "./Component/Card/Card";
+// import ExcelDataShowing from "./Component/ExcleDataShowing/ExcelDataShowing";
+// import PostData from "./Component/PostDataToApiUseingReact/PostData";
+// import Map from "./Component/Map/Map";
+import ExportDataInJsonFormet from "./Component/ExportJsonDataInExcelFormet/ExportDataInJsonFormet";
 
 function App() {
   // const [posts, setPosts] = useState([]);
@@ -29,13 +31,19 @@ function App() {
     //   ))}
     // </div>
 
-    <div >
+    <div>
       {/* <LayoutComponetn></LayoutComponetn> */}
       {/* <From></From> */}
-     
+
       {/* <Card></Card> */}
 
-      <ExcelDataShowing></ExcelDataShowing>
+      {/* <ExcelDataShowing></ExcelDataShowing> */}
+
+      {/* <PostData></PostData> */}
+
+      {/* <Map></Map> */}
+
+      <ExportDataInJsonFormet></ExportDataInJsonFormet>
     </div>
   );
 }
