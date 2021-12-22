@@ -7,6 +7,7 @@ import Promise from "./Component/Promise/Promise";
 import PureCom from "./Component/ReactAdvance/PureCom";
 import RegComponent from "./Component/ReactAdvance/RegComponent";
 import Seracch from "./Component/Search/Seracch";
+import SortByCatagory from "./Component/SortByCatagory/SortByCatagory";
 
 // import { useEffect, useState } from "react";
 // import { TASKS } from "./Component/DragAndDrop/Constants";
@@ -45,8 +46,9 @@ class App extends Component {
         {/* <PureCom name={this.state.name}></PureCom> */}
         {/* <RegComponent name={this.state.name}></RegComponent> */}
       
-      <Seracch></Seracch>
+      {/* <Seracch></Seracch> */}
       
+      <SortByCatagory></SortByCatagory>
       </div>
     );
   }
