@@ -6,6 +6,7 @@ import { render } from "react-dom";
 import Promise from "./Component/Promise/Promise";
 import PureCom from "./Component/ReactAdvance/PureCom";
 import RegComponent from "./Component/ReactAdvance/RegComponent";
+import RealtimeChatingWithMessenger from "./Component/RealTimeChatingWithMessenger/RealtimeChatingWithMessenger";
 import Seracch from "./Component/Search/Seracch";
 import SortByCatagory from "./Component/SortByCatagory/SortByCatagory";
 
@@ -24,9 +25,9 @@ class App extends Component {
   state = {
     name: "Jahidul Islam",
   };
-  componentDidMount(){
+  componentDidMount() {
     setInterval(() => {
-      this.setState({name:'Jahidul Islam'})
+      this.setState({ name: "Jahidul Islam" });
     }, 500);
   }
 
@@ -43,12 +44,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        test
         {/* <PureCom name={this.state.name}></PureCom> */}
         {/* <RegComponent name={this.state.name}></RegComponent> */}
-      
-      {/* <Seracch></Seracch> */}
-      
-      <SortByCatagory></SortByCatagory>
+        {/* <Seracch></Seracch> */}
+        {/* <SortByCatagory></SortByCatagory> */}
+        <RealtimeChatingWithMessenger></RealtimeChatingWithMessenger>
       </div>
     );
   }
