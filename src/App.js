@@ -3,12 +3,16 @@ import { Component } from "react";
 // import BarChart from "./Component/BarChar";
 // import LineDemo from "./Component/LineDemo";
 import { render } from "react-dom";
+import FormValidation from "./Component/FormValidation/FormValidation";
+import Like from "./Component/Like/Like";
+import PdfGenarator from "./Component/PdfGenarator/PdfGenarator";
 import Promise from "./Component/Promise/Promise";
 import PureCom from "./Component/ReactAdvance/PureCom";
 import RegComponent from "./Component/ReactAdvance/RegComponent";
 import RealtimeChatingWithMessenger from "./Component/RealTimeChatingWithMessenger/RealtimeChatingWithMessenger";
 import Seracch from "./Component/Search/Seracch";
 import SortByCatagory from "./Component/SortByCatagory/SortByCatagory";
+import UploadImages from "./Component/UploadImages/UploadImages";
 
 // import { useEffect, useState } from "react";
 // import { TASKS } from "./Component/DragAndDrop/Constants";
@@ -44,12 +48,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        test
+        <h1> test</h1>
+        <FormValidation></FormValidation>
+        {/* <UploadImages></UploadImages> */}
+        {/* <PdfGenarator></PdfGenarator> */}
+        {/* <Like></Like> */}
         {/* <PureCom name={this.state.name}></PureCom> */}
         {/* <RegComponent name={this.state.name}></RegComponent> */}
         {/* <Seracch></Seracch> */}
         {/* <SortByCatagory></SortByCatagory> */}
-        <RealtimeChatingWithMessenger></RealtimeChatingWithMessenger>
+        {/* <RealtimeChatingWithMessenger></RealtimeChatingWithMessenger> */}
       </div>
     );
   }
