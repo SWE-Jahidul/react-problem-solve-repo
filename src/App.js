@@ -5,6 +5,7 @@ import { Component } from "react";
 import { render } from "react-dom";
 import FormValidation from "./Component/FormValidation/FormValidation";
 import Like from "./Component/Like/Like";
+import Products from "./Component/Pagination/Products";
 import PdfGenarator from "./Component/PdfGenarator/PdfGenarator";
 import Promise from "./Component/Promise/Promise";
 import PureCom from "./Component/ReactAdvance/PureCom";
@@ -49,7 +50,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1> test</h1>
-        <FormValidation></FormValidation>
+     <Products>
+       
+     </Products>
+        {/* <FormValidation></FormValidation> */}
         {/* <UploadImages></UploadImages> */}
         {/* <PdfGenarator></PdfGenarator> */}
         {/* <Like></Like> */}

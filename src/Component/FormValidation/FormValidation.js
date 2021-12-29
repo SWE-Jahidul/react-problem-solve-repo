@@ -64,7 +64,7 @@ const FormValidation = () => {
         onBlur={Namevalidation}
       />
       <br></br>
-      <input type="text" placeholder="Email " onBlur={EamilValidation} />
+      <input type="email" placeholder="Email " onBlur={EamilValidation} />
 
       <br></br>
 
