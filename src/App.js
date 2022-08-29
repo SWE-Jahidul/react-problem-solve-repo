@@ -3,6 +3,8 @@ import { Component } from "react";
 // import BarChart from "./Component/BarChar";
 // import LineDemo from "./Component/LineDemo";
 import { render } from "react-dom";
+import DailyTaskApp from "./Component/DailyTaskDemo/Dailytask";
+import Dropdown from "./Component/DropDown/DropDown";
 import FormValidation from "./Component/FormValidation/FormValidation";
 import Like from "./Component/Like/Like";
 import Products from "./Component/Pagination/Products";
@@ -49,10 +51,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> test</h1>
-     <Products>
+        {/* <h1
+          style={{
+            textAlign: "center",
+          }}
+        >
+          {" "}
+          TODO APP{" "}
+        </h1> */}
+        <DailyTaskApp></DailyTaskApp>
+
+        {/* <Dropdown></Dropdown> */}
+
+        {/* <Products>
        
-     </Products>
+     </Products> */}
         {/* <FormValidation></FormValidation> */}
         {/* <UploadImages></UploadImages> */}
         {/* <PdfGenarator></PdfGenarator> */}
