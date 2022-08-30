@@ -1,5 +1,7 @@
 import TagListItem from "./TaglistItem";
 
+
+import './dailytask.css'
 const task = {
     id: 'unique_id_001',
     subTitle: "Subtitle",
@@ -85,23 +87,19 @@ function getDay(dateStr) {
 function formetDate(dateStr) {
     const date = new Date(dateStr);
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-
 }
-
-
-
 
 function DailyTaskApp() {
     return (
-        <>
-            <h1 style={{
+        <div className="day-card">
+            <h3 style={{
                 textAlign: "center",
             }}>
                 TODO APP
-            </h1>
+            </h3>
 
             <div>
-                <h1> {getDay(task.createAt)} , {formetDate(task.createAt)}</h1>
+                <h4> {getDay(task.createAt)} , {formetDate(task.createAt)}</h4>
                 <h6> {task.subTitle} </h6>
                 <ul>
                     {
@@ -136,7 +134,7 @@ function DailyTaskApp() {
             </div>
 
 
-        </>
+        </div>
     )
 
 }
