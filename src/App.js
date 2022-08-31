@@ -3,9 +3,11 @@ import { Component } from "react";
 // import BarChart from "./Component/BarChar";
 // import LineDemo from "./Component/LineDemo";
 import { render } from "react-dom";
+import AdvanceSearch from "./Component/AdvanceSearch/AdvanceSearch";
 import DailyTaskApp from "./Component/DailyTaskDemo/Dailytask";
 import Dropdown from "./Component/DropDown/DropDown";
 import FormValidation from "./Component/FormValidation/FormValidation";
+import JsonToJsxToJson from "./Component/JsonToJsxToJson/JsonToJsxToJson";
 import Like from "./Component/Like/Like";
 import Products from "./Component/Pagination/Products";
 import PdfGenarator from "./Component/PdfGenarator/PdfGenarator";
@@ -51,6 +53,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {/* <AdvanceSearch> </AdvanceSearch> */}
+
+        {/* <JsonToJsxToJson></JsonToJsxToJson> */}
+
         {/* <h1
           style={{
             textAlign: "center",
@@ -59,9 +65,9 @@ class App extends Component {
           {" "}
           TODO APP{" "}
         </h1> */}
-        <DailyTaskApp></DailyTaskApp>
+        {/* <DailyTaskApp></DailyTaskApp> */}
 
-        {/* <Dropdown></Dropdown> */}
+        <Dropdown></Dropdown>
 
         {/* <Products>
        

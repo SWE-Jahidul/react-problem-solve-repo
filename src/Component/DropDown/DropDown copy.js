@@ -79,19 +79,6 @@ function Dropdown() {
             ))}
           </select>
         </div>
-
-        <input
-          style={{
-            width: "15rem",
-            padding: 8,
-            marginRight: "1rem",
-          }}
-          type="text"
-          placeholder="Search"
-          id="fname"
-          name="fname"
-        />
-
         <button className="btn btn-primary " onClick={showResult}>
           Show Result
         </button>
