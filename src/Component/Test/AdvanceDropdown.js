@@ -54,13 +54,13 @@ const searchData = [
   },
 ];
 
-const Dropdown = () => {
+const AdvanceDropDown = () => {
   useEffect(() => {
     defaultChid();
   }, []);
 
   const [allChild, setAllChild] = useState([]);
-  const moduleInputRef = useRef();
+  const { moduleInputRef } = useRef();
   const moduleRef = useRef();
   const childDataRef = useRef();
 
@@ -73,7 +73,7 @@ const Dropdown = () => {
   };
 
   return (
-    <div className="pt-5 ">
+    <div class="pt-5 ">
       <form className="container" onSubmit={handleSubmit}>
         <div className="row">
           <select
@@ -133,4 +133,4 @@ const Dropdown = () => {
   }
 };
 
-export default Dropdown;
+export default AdvanceDropDown;

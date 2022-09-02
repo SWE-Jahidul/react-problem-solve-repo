@@ -54,6 +54,12 @@ function JsonToJsxToJson() {
   //     });
   //   };
 
+  const handleArithmeticOperations = (e) => {
+    console.log(
+      eval(`${inputState.a} ${e.target.textContent} ${inputState.b} `)
+    );
+  };
+
   return (
     <>
       <div style={{ width: "50%", margin: "0 auto" }}>
@@ -77,15 +83,18 @@ function JsonToJsxToJson() {
             name="b"
           />
         </div>
-      </div>
-      <div>
-        <p> Operations </p>
-
-        <button> + </button>
-        <button> - </button>
-        <button> * </button>
-        <button> / </button>
-        <button onClick={handleClearOps}> Clear </button>
+        <div
+          style={{
+            marginTop: "10px",
+          }}
+        >
+          <p> Operations </p>
+          <button onClick={() => handleArithmeticOperations("+")}> + </button>
+          <button onClick={() => handleArithmeticOperations("-")}> - </button>
+          <button onClick={() => handleArithmeticOperations("*")}> * </button>
+          <button onClick={() => handleArithmeticOperations("/")}> / </button>
+          <button onClick={handleClearOps}> Clear </button>
+        </div>
       </div>
     </>
   );
