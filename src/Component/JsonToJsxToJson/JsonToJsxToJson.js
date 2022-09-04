@@ -22,6 +22,7 @@ function JsonToJsxToJson() {
       [e.target.name]: parseInt(e.target.value),
     });
   };
+
   const handleClearOps = () => {
     setInputState({ ...InitialInputState });
   };
@@ -53,11 +54,17 @@ function JsonToJsxToJson() {
 
   //     });
   //   };
+ 
+  const handleArithmeticOperation = (operation) => {
+    const operationsStr = `${inputState.a} ${operation} ${inputState.b}`;
 
-  const handleArithmeticOperations = (e) => {
-    console.log(
-      eval(`${inputState.a} ${e.target.textContent} ${inputState.b} `)
+    const f = new Function(
+      "operation",
+      ` return ${operationsStr}
+`
     );
+    console.log(f);
+    console.log(f(operation));
   };
 
   return (
@@ -89,10 +96,10 @@ function JsonToJsxToJson() {
           }}
         >
           <p> Operations </p>
-          <button onClick={() => handleArithmeticOperations("+")}> + </button>
-          <button onClick={() => handleArithmeticOperations("-")}> - </button>
-          <button onClick={() => handleArithmeticOperations("*")}> * </button>
-          <button onClick={() => handleArithmeticOperations("/")}> / </button>
+          <button onClick={() => handleArithmeticOperation("+")}> + </button>
+          <button onClick={() => handleArithmeticOperation("-")}> - </button>
+          <button onClick={() => handleArithmeticOperation("*")}> * </button>
+          <button onClick={() => handleArithmeticOperation("/")}> / </button>
           <button onClick={handleClearOps}> Clear </button>
         </div>
       </div>
