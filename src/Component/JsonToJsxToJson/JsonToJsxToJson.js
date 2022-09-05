@@ -1,20 +1,32 @@
 /**
  * DONE : Handle User input fields
- * TODO : Handle Operation
- * Handle a list of histories
- * Render history List
+ * DONE : Handle Operation
+ * DONE : Handle a list of histories
+ * DONE : Render history List
  * Restore the history
  */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+function* genarateId() {
+  let index = 0;
+  while (true) {
+    yield index++;
+  }
+}
+
+const gen = genarateId();
 
 const InitialInputState = {
-  a: 0,
-  b: 0,
+  a: 10,
+  b: 20,
 };
 
-function JsonToJsxToJson() {
+const JsonToJsxToJson = () => {
   const [inputState, setInputState] = useState({ ...InitialInputState });
+  const [result, setResult] = useState(0);
+  const [histories, setHistories] = useState([]);
+  const [restored, setRestored] = useState(null);
 
   const handleInputFields = (e) => {
     setInputState({
@@ -54,23 +66,39 @@ function JsonToJsxToJson() {
 
   //     });
   //   };
- 
+
   const handleArithmeticOperation = (operation) => {
+    if (!inputState.a || !inputState.b) {
+      alert("Invalid");
+      return;
+    }
     const operationsStr = `${inputState.a} ${operation} ${inputState.b}`;
 
-    const f = new Function(
-      "operation",
-      ` return ${operationsStr}
-`
-    );
-    console.log(f);
-    console.log(f(operation));
+    const f = new Function("operation", `return ${operationsStr}`);
+    const result = f(operation);
+    setResult(result);
+
+    const historyItem = {
+      id: gen.next().value,
+      inputs: { ...inputState },
+      operation,
+      result,
+      date: new Date(),
+    };
+
+    setHistories([historyItem, ...histories]);
+  };
+
+  const handleRestoreBtn = (historyItem) => {
+    setInputState({ ...historyItem.inputs });
+    setResult(historyItem.result);
+    setRestored(historyItem.id);
   };
 
   return (
     <>
       <div style={{ width: "50%", margin: "0 auto" }}>
-        <h1> Result : 0</h1>
+        <h1> Result :{result} </h1>
 
         <div>
           <p> Inputs </p>
@@ -102,9 +130,37 @@ function JsonToJsxToJson() {
           <button onClick={() => handleArithmeticOperation("/")}> / </button>
           <button onClick={handleClearOps}> Clear </button>
         </div>
+
+        <div>
+          <p> History </p>
+          {histories.length === 0 ? (
+            <p>
+              <small> There is no History </small>{" "}
+            </p>
+          ) : (
+            <ul>
+              {/* <p> {JSON.stringify(histories)} </p> */}
+              {histories.map((historyItem) => (
+                <li key={historyItem.id}>
+                  <p>
+                    Oparation : {historyItem.inputs.a} {historyItem.operation}
+                    {historyItem.inputs.b} Result : {historyItem.result}
+                  </p>
+                  <small>{new Date().toLocaleDateString()}</small>
+                  <button
+                    onClick={() => handleRestoreBtn(historyItem)}
+                    disabled={restored !== null && historyItem === restored.id}
+                  >
+                    Restore
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </>
   );
-}
+};
 
 export default JsonToJsxToJson;
