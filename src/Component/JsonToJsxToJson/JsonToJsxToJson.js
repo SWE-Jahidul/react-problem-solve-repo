@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useState } from "react";
-
+import NumberField from "./components/ui/NumberField";
 function* genarateId() {
   let index = 0;
   while (true) {
@@ -110,7 +110,7 @@ const JsonToJsxToJson = () => {
             // onChange={(e) => handleInputFields( {a: parseInt(e.target.value) })}
             name="a"
           />
-          <input
+          <NumberField
             type="number"
             value={inputState.b}
             onChange={handleInputFields}
