@@ -8,6 +8,10 @@
 
 import { useEffect, useState } from "react";
 import NumberField from "./components/ui/NumberField";
+import Button from "./components/ui/Button";
+import InputSection from "./components/inputs/InputSection";
+import OparationsSection from "./components/operations/OparationsSection";
+
 function* genarateId() {
   let index = 0;
   while (true) {
@@ -100,36 +104,19 @@ const JsonToJsxToJson = () => {
       <div style={{ width: "50%", margin: "0 auto" }}>
         <h1> Result :{result} </h1>
 
-        <div>
-          <p> Inputs </p>
+        {/* {TODO use Input section Component} */}
 
-          <input
-            type="number"
-            value={inputState.a}
-            onChange={handleInputFields}
-            // onChange={(e) => handleInputFields( {a: parseInt(e.target.value) })}
-            name="a"
-          />
-          <NumberField
-            type="number"
-            value={inputState.b}
-            onChange={handleInputFields}
-            // onChange={(e) => handleInputFields({b: parseInt(e.target.value)})}
-            name="b"
-          />
-        </div>
-        <div
-          style={{
-            marginTop: "10px",
-          }}
-        >
-          <p> Operations </p>
-          <button onClick={() => handleArithmeticOperation("+")}> + </button>
-          <button onClick={() => handleArithmeticOperation("-")}> - </button>
-          <button onClick={() => handleArithmeticOperation("*")}> * </button>
-          <button onClick={() => handleArithmeticOperation("/")}> / </button>
-          <button onClick={handleClearOps}> Clear </button>
-        </div>
+        <InputSection
+          inputs={inputState}
+          handleInputFields={handleInputFields}
+        />
+
+        {/* Operations */}
+
+        <OparationsSection
+          handleArithmeticOperation={handleArithmeticOperation}
+          handleClearOps={handleClearOps}
+        />
 
         <div>
           <p> History </p>
