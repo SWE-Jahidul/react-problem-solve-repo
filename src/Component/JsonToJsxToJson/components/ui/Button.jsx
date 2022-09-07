@@ -17,7 +17,6 @@ const Button = ({ text, onClick, disabled, customStyle }) => {
         ...customStyle,
         ...(disabled && disabledStyle
         ),
-
     }
 
     return (<button style={style} onClick={onClick} disabled={disabled}> {text}</button>)

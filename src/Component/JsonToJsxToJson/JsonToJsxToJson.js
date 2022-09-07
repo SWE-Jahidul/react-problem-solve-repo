@@ -6,11 +6,10 @@
  * Restore the history
  */
 
-import { useEffect, useState } from "react";
-import NumberField from "./components/ui/NumberField";
-import Button from "./components/ui/Button";
+import { useState } from "react";
 import InputSection from "./components/inputs/InputSection";
 import OparationsSection from "./components/operations/OparationsSection";
+import HistorySection from "./components/history/HistorySection";
 
 function* genarateId() {
   let index = 0;
@@ -43,34 +42,6 @@ const JsonToJsxToJson = () => {
     setInputState({ ...InitialInputState });
   };
 
-  //   const handleFieldA = (e) => {
-  //     setInputState({
-  //       ...inputState,
-  //       a: parseInt(e.target.vaue),
-  //     });
-  //   };
-  //   const handleFieldB = (e) => {
-  //     setInputState({
-  //       ...inputState,
-  //       b: parseInt(e.target.vaue),
-  //     });
-  //   };
-
-  //   const handleInputFields = (key, value) => {
-  //     setInputState({
-  //       ...inputState,
-  //       [key]: value,
-  //     });
-  //   };
-
-  //   const handleInputFields = (inp) => {
-  //     setInputState({
-  //       ...inputState,
-  //        ...inp
-
-  //     });
-  //   };
-
   const handleArithmeticOperation = (operation) => {
     if (!inputState.a || !inputState.b) {
       alert("Invalid");
@@ -89,7 +60,6 @@ const JsonToJsxToJson = () => {
       result,
       date: new Date(),
     };
-
     setHistories([historyItem, ...histories]);
   };
 
@@ -103,48 +73,20 @@ const JsonToJsxToJson = () => {
     <>
       <div style={{ width: "50%", margin: "0 auto" }}>
         <h1> Result :{result} </h1>
-
-        {/* {TODO use Input section Component} */}
-
         <InputSection
           inputs={inputState}
           handleInputFields={handleInputFields}
         />
-
-        {/* Operations */}
-
         <OparationsSection
           handleArithmeticOperation={handleArithmeticOperation}
           handleClearOps={handleClearOps}
         />
 
-        <div>
-          <p> History </p>
-          {histories.length === 0 ? (
-            <p>
-              <small> There is no History </small>{" "}
-            </p>
-          ) : (
-            <ul>
-              {/* <p> {JSON.stringify(histories)} </p> */}
-              {histories.map((historyItem) => (
-                <li key={historyItem.id}>
-                  <p>
-                    Oparation : {historyItem.inputs.a} {historyItem.operation}
-                    {historyItem.inputs.b} Result : {historyItem.result}
-                  </p>
-                  <small>{new Date().toLocaleDateString()}</small>
-                  <button
-                    onClick={() => handleRestoreBtn(historyItem)}
-                    disabled={restored !== null && historyItem === restored.id}
-                  >
-                    Restore
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+        <HistorySection
+          histories={histories}
+          restored={restored}
+          handleRestoreBtn={handleRestoreBtn}
+        />
       </div>
     </>
   );

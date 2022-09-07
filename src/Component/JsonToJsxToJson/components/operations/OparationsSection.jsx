@@ -33,13 +33,10 @@ const OparationsSection = ({ handleArithmeticOperation, handleClearOps }) => {
             onClick: handleClearOps
         }
     ]
-
     const style = {
-
         display: 'flex',
         gap: '1rem'
     }
-
     return (
         <div
             style={{
