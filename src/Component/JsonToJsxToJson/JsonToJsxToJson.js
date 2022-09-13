@@ -3,7 +3,7 @@
  * DONE : Handle Operation
  * DONE : Handle a list of histories
  * DONE : Render history List
- * Restore the history
+ * DONE : Restore the history
  */
 
 import { useState } from "react";

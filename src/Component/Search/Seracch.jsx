@@ -24,7 +24,7 @@ const Seracch = () => {
         }
       }).map((val, key) => {
         return (
-          <div>
+          <div key={key.id}>
             {searchTerm.length != 0 && (
               <a className="dataitem" href={val.link} target="_blank">
                 <p> {val.title}</p>

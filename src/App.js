@@ -18,6 +18,7 @@ import RegComponent from "./Component/ReactAdvance/RegComponent";
 import RealtimeChatingWithMessenger from "./Component/RealTimeChatingWithMessenger/RealtimeChatingWithMessenger";
 import Seracch from "./Component/Search/Seracch";
 import SortByCatagory from "./Component/SortByCatagory/SortByCatagory";
+import StateLifting from "./Component/StateLifting/StateLifting";
 import AdvanceDropDown from "./Component/Test/AdvanceDropdown";
 import UploadImages from "./Component/UploadImages/UploadImages";
 
@@ -56,9 +57,10 @@ class App extends Component {
     return (
       <div className="App">
         {/* <AdvanceSearch> </AdvanceSearch> */}
+{/* 
+        <JsonToJsxToJson></JsonToJsxToJson> */}
 
-        <JsonToJsxToJson></JsonToJsxToJson>
-
+<StateLifting />
         {/* <AdvanceDropDown></AdvanceDropDown> */}
         {/* <h1
           style={{

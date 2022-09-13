@@ -7,7 +7,6 @@ const FormValidation = () => {
 
   const Namevalidation = (e) => {
     var letterNumber = /^[a-z0-9]+$/i;
-
     if ((e.target.value = letterNumber)) {
       // if (/^[a-zA-Z0-9]+$/.test("rrr")) {
       alert("sucess");

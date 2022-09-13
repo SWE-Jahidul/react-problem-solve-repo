@@ -6,7 +6,6 @@ const InputSection = ({ inputs, handleInputFields }) => {
             width: '100%',
             background: 'gray',
             padding: '1rem',
-
         }}>
             <h3 style={{
                 fontFamily: 'Arial',
