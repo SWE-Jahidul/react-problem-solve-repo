@@ -21,6 +21,7 @@ import SortByCatagory from "./Component/SortByCatagory/SortByCatagory";
 import StateLifting from "./Component/StateLifting/StateLifting";
 import AdvanceDropDown from "./Component/Test/AdvanceDropdown";
 import UploadImages from "./Component/UploadImages/UploadImages";
+import Data from "./Component/viewData/Data";
 
 // import { useEffect, useState } from "react";
 // import { TASKS } from "./Component/DragAndDrop/Constants";
@@ -60,7 +61,9 @@ class App extends Component {
 {/* 
         <JsonToJsxToJson></JsonToJsxToJson> */}
 
-<StateLifting />
+
+<Data />
+{/* <StateLifting /> */}
         {/* <AdvanceDropDown></AdvanceDropDown> */}
         {/* <h1
           style={{
